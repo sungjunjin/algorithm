@@ -51,4 +51,27 @@ public class Day3 {
 
         return answer;
     }
+
+    /**
+     * 프로그래머스 분수의 덧셈
+     */
+    public int[] fractions(int numer1, int denom1, int numer2, int denom2) {
+        // 분자
+        int numer = (numer1 * denom2) + (numer2 * denom1);
+        // 분모
+        int denom = denom1 * denom2;
+
+        int biggerValue = Math.max(numer, denom);
+
+        // 최대공약수 구하기
+        int gcd = 1;
+
+        for (int i = 1; i <= biggerValue; i++) {
+            if(numer % i == 0 && denom % i == 0) {
+                gcd = i;
+            }
+        }
+
+        return new int[]{numer / gcd, denom / gcd};
+    }
 }
