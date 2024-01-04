@@ -1,4 +1,4 @@
-package me.sj.algorithm.day4;
+package me.sj.algorithm.day5;
 
 import me.sj.algorithm.day5.Day5;
 import org.junit.jupiter.api.Test;
