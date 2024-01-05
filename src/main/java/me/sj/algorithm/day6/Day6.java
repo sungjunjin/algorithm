@@ -1,8 +1,5 @@
 package me.sj.algorithm.day6;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
-
 public class Day6 {
     public int clothingStore(int price) {
         if(price >= 500_000) {
