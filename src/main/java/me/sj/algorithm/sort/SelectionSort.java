@@ -1,22 +1,19 @@
 package me.sj.algorithm.sort;
 
 public class SelectionSort {
-    public void sort(int[] intArray) {
-        for(int index=0;index<intArray.length-1;index++) {
-            int min = intArray[index];
-            int minIndex = index;
+    public void sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int min = arr[i];
 
-            for(int j=index;j<intArray.length;j++) {
+            for (int j = i; j < arr.length; j++) {
+                if (min > arr[j]) {
+                    min = arr[j];
 
-                if(min > intArray[j]) {
-                    min = intArray[j];
-                    minIndex = j;
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
-
-            int temp = intArray[index];
-            intArray[minIndex] = intArray[index];
-            intArray[index] = min;
         }
     }
 }

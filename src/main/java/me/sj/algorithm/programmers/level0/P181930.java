@@ -29,8 +29,4 @@ public class P181930 {
 
         return (a+b+c) + (a*a + b*b + c*c);
     }
-
-    public static void main(String[] args) {
-
-    }
 }
