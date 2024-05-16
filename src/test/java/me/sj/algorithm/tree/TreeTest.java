@@ -20,7 +20,7 @@ class TreeTest {
         Tree.Node<String> newNode = new Tree.Node<>("children");
         rootNode.add(newNode);
 
-        Tree.Node result = rootNode.get("children");
+        Tree.Node result = rootNode.getNodeOrNull("children");
 
         assertThat(result.getData()).isEqualTo("children");
     }
@@ -30,7 +30,7 @@ class TreeTest {
         Tree.Node<String> newNode = new Tree.Node<>("children");
         rootNode.add(newNode);
 
-        Tree.Node result = rootNode.get("fail");
+        Tree.Node result = rootNode.getNodeOrNull("fail");
 
         assertThat(result).isNull();
     }

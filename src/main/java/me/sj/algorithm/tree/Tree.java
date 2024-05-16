@@ -15,7 +15,7 @@ public class Tree {
             this.children.add(node);
         }
 
-        public Node get(T data) {
+        public Node getNodeOrNull(T data) {
             for(Node node: children) {
                 if(node.getData().equals(data)) {
                     return node;
