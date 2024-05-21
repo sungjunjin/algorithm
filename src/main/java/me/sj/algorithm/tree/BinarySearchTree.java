@@ -58,12 +58,18 @@ public class BinarySearchTree {
             return null;
         }
 
-        public void deleteNode(Node startNode, int data) {
-            Node node = this.getNodeOrNull(startNode, data);
+        /**
+         * 중위 순회
+         */
+        public void traverseInOrder(Node node) {
 
-            if(node != null) {
-                node = null;
+            if(node == null) {
+                return;
             }
+
+            traverseInOrder(node.left);
+            System.out.println(node.data);
+            traverseInOrder(node.right);
         }
     }
 }
