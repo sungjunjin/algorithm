@@ -1,7 +1,7 @@
 package me.sj.algorithm.programmers.level0;
 
 /**
- * https://school.programmers.co.kr/learn/courses/30/lessons/181934
+ * https://school.programmers.co.kr/learn/courses/30/lessons/181924
  */
 public class P181924 {
     public int[] solution(int[] arr, int[][] queries) {
