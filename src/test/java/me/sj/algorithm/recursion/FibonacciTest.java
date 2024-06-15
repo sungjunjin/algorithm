@@ -14,5 +14,4 @@ class FibonacciTest {
 
         assertThat(result).isEqualTo(8);
     }
-
 }

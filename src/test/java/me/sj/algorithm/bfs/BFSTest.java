@@ -4,6 +4,7 @@ import me.sj.algorithm.dfs.BFS;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class BFSTest {
 
@@ -26,5 +27,28 @@ class BFSTest {
         child1.addChildren(children2);
 
         root.searchBreadthFirst(root);
+    }
+
+    @Test
+    public void test() {
+        int a = 121;
+
+        String aStr = String.valueOf(a);
+
+        char[] arr = aStr.toCharArray();
+        char[] reverseArr = new char[arr.length];
+
+        int index = arr.length - 1;
+        for(char c: arr) {
+            reverseArr[index] = c;
+            index--;
+        }
+
+        String reverseStr = String.valueOf(reverseArr);
+
+        if(Integer.parseInt(reverseStr) == a) {
+            System.out.println(true);
+        }
+
     }
 }
