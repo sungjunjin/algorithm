@@ -1,4 +1,4 @@
-package me.sj.algorithm.inflearn;
+package me.sj.algorithm.inflearn.string;
 
 import java.util.Scanner;
 

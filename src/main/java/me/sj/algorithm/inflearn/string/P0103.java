@@ -1,9 +1,9 @@
-package me.sj.algorithm.inflearn;
+package me.sj.algorithm.inflearn.string;
 
 import java.util.Scanner;
 
 /**
- * 문자 찾기
+ * 문장 속 단어
  */
 public class P0103 {
     public static void main(String[] args) {
@@ -12,21 +12,21 @@ public class P0103 {
 
         P0103 p0103 = new P0103();
 
-        System.out.println(p0103.solutionMine(input1));
+        System.out.println(p0103.solutionLecture(input1));
     }
 
     public String solutionMine(String str) {
         String[] strArray = str.split(" ");
 
         int max = 0;
-        for(String s : strArray) {
-            if(max < s.length()) {
+        for (String s : strArray) {
+            if (max < s.length()) {
                 max = s.length();
             }
         }
 
-        for(String s : strArray) {
-            if(s.length() == max) {
+        for (String s : strArray) {
+            if (s.length() == max) {
                 return s;
             }
         }
@@ -36,6 +36,17 @@ public class P0103 {
 
     public String solutionLecture(String str) {
         String answer = "";
+        int m = Integer.MIN_VALUE;
+        String[] s = str.split(" ");
+
+        for(String x : s) {
+            int len = x.length();
+
+            if(len > m) {
+                m = len;
+                answer = x;
+            }
+        }
 
         return answer;
     }

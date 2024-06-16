@@ -1,9 +1,9 @@
-package me.sj.algorithm.inflearn;
+package me.sj.algorithm.inflearn.string;
 
 import java.util.Scanner;
 
 /**
- * 문자 찾기
+ * 대소문자 변환
  */
 public class P0102 {
     public static void main(String[] args) {
