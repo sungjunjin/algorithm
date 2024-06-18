@@ -3,7 +3,7 @@ package me.sj.algorithm.inflearn.string;
 import java.util.Scanner;
 
 /**
- * 숫자만 추출
+ * 가장 짧은 문자거리
  */
 public class P0110 {
     public static void main(String[] args) {
