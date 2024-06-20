@@ -6,9 +6,9 @@ import java.util.Scanner;
 /**
  * 큰 수 출력하기
  */
-public class P0101 {
+public class P0201 {
     public static void main(String[] args) {
-        P0101 p0101 = new P0101();
+        P0201 p0201 = new P0201();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
 
@@ -18,7 +18,7 @@ public class P0101 {
             arr[i] = in.nextInt();
         }
 
-        for (int x : p0101.solutionMine(arr)) {
+        for (int x : p0201.solutionMine(arr)) {
             System.out.print(x + " ");
         }
     }

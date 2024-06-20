@@ -5,9 +5,9 @@ import java.util.Scanner;
 /**
  * 보이는 학생
  */
-public class P0102 {
+public class P0202 {
     public static void main(String[] args) {
-        P0102 p0102 = new P0102();
+        P0202 p0202 = new P0202();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
 
@@ -17,7 +17,7 @@ public class P0102 {
             arr[i] = in.nextInt();
         }
 
-        System.out.println(p0102.solutionLecture(arr));
+        System.out.println(p0202.solutionLecture(arr));
     }
 
     public int solutionMine(int[] arr) {
