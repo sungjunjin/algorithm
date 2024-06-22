@@ -1,14 +1,16 @@
 package me.sj.algorithm.inflearn.sort;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 버블 정렬
+ * 장난꾸러기
  */
-public class P0602 {
+public class P0606 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        P0602 p0602 = new P0602();
+        P0606 p0606 = new P0606();
         int n = in.nextInt();
 
         int[] arr = new int[n];
@@ -17,23 +19,27 @@ public class P0602 {
             arr[i] = in.nextInt();
         }
 
-        for (int a : p0602.solutionMine(arr)) {
+        for (int a : p0606.solutionMine(arr)) {
             System.out.print(a + " ");
         }
     }
 
     public int[] solutionMine(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
-                if (arr[j] > arr[j+1]) {
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = temp;
-                }
+        int[] answer = new int[2];
+
+        // 깊은 복사
+        int[] originalArr = arr.clone();
+        Arrays.sort(arr);
+
+        int countIdx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(originalArr[i] != arr[i]) {
+                answer[countIdx] = i + 1;
+                countIdx++;
             }
         }
 
-        return arr;
+        return answer;
     }
 
     public int[] solutionLecture(int[] arr) {

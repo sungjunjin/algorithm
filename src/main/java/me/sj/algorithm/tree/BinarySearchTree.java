@@ -57,6 +57,18 @@ public class BinarySearchTree {
 
             return null;
         }
+        /**
+         * 전위 순회
+         */
+        public void traversePreOrder(Node node) {
+
+            if(node == null) {
+                return;
+            }
+            System.out.println(node.data);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
 
         /**
          * 중위 순회
@@ -70,6 +82,20 @@ public class BinarySearchTree {
             traverseInOrder(node.left);
             System.out.println(node.data);
             traverseInOrder(node.right);
+        }
+
+        /**
+         * 후위 순회
+         */
+        public void traversePostOrder(Node node) {
+
+            if(node == null) {
+                return;
+            }
+
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.println(node.data);
         }
     }
 }
