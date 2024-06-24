@@ -1,4 +1,4 @@
-package me.sj.algorithm.inflearn.dfs;
+package me.sj.algorithm.inflearn.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
