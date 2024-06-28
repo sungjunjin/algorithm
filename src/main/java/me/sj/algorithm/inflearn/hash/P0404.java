@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * 매출액의 종류 (해시, Sliding Window)
+ * 모든 아나그램 찾기
+ * <p>
+ * S문자열에서 T문자열과 아나그램이 되는 S의 부분문자열의 개수를 구하는 프로그램을 작성하세요.
+ * <p>
+ * 아나그램 판별시 대소문자가 구분됩니다. 부분문자열은 연속된 문자열이어야 합니다.
  */
 public class P0404 {
     public static void main(String[] args) {
@@ -26,7 +30,7 @@ public class P0404 {
 
         HashMap<Character, Integer> targetMap = new HashMap<>();
 
-        for(char c : target.toCharArray()) {
+        for (char c : target.toCharArray()) {
             targetMap.put(c, targetMap.getOrDefault(c, 0) + 1);
         }
 
@@ -36,7 +40,7 @@ public class P0404 {
         for (int i = 0; i < target.length(); i++) {
             map.put(input.charAt(i), map.getOrDefault(input.charAt(i), 0) + 1);
 
-            if(map.equals(targetMap)) answer++;
+            if (map.equals(targetMap)) answer++;
 
         }
 
@@ -46,13 +50,13 @@ public class P0404 {
 
             // left 처리
             int value = map.get(input.charAt(left));
-            if(value == 1) {
+            if (value == 1) {
                 map.remove(input.charAt(left));
             } else {
                 map.put(input.charAt(left), map.get(input.charAt(left)) - 1);
             }
 
-            if(map.equals(targetMap)) {
+            if (map.equals(targetMap)) {
                 answer++;
             }
 

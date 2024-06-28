@@ -4,10 +4,18 @@ import java.util.Scanner;
 
 /**
  * 가위 바위 보
+ * A, B 두 사람이 가위바위보 게임을 합니다. 총 N번의 게임을 하여 A가 이기면 A를 출력하고, B가 이기면 B를 출력합니다. 비길 경우에는 D를 출력합니다.
+ * <p>
+ * 가위, 바위, 보의 정보는 1:가위, 2:바위, 3:보로 정하겠습니다.
+ * <p>
+ * 예를 들어 N=5이면
+ * <p>
+ * <p>
+ * 두 사람의 각 회의 가위, 바위, 보 정보가 주어지면 각 회를 누가 이겼는지 출력하는 프로그램을 작성하세요.
  */
-public class P0103 {
+public class P0203 {
     public static void main(String[] args) {
-        P0103 p0103 = new P0103();
+        P0203 p0203 = new P0203();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
 
@@ -22,7 +30,7 @@ public class P0103 {
             b[i] = in.nextInt();
         }
 
-        for (char c : p0103.solutionMine(a, b)) {
+        for (char c : p0203.solutionMine(a, b)) {
             System.out.println(c);
         }
     }

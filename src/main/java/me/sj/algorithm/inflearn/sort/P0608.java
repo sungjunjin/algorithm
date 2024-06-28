@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 /**
  * 이분 검색
+ * 임의의 N개의 숫자가 입력으로 주어집니다. N개의 수를 오름차순으로 정렬한 다음 N개의 수 중 한 개의 수인 M이 주어지면
+ * <p>
+ * 이분검색으로 M이 정렬된 상태에서 몇 번째에 있는지 구하는 프로그램을 작성하세요. 단 중복값은 존재하지 않습니다.
  */
 public class P0608 {
     public static void main(String[] args) {
@@ -31,14 +34,14 @@ public class P0608 {
         int right = arr.length - 1;
 
         // 이진탐색
-        while(left <= right) {
+        while (left <= right) {
             int mid = (left + right) / 2;
 
-            if(arr[mid] == target) {
+            if (arr[mid] == target) {
                 return mid + 1;
             }
 
-            if(target < arr[mid]) {
+            if (target < arr[mid]) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
@@ -55,14 +58,14 @@ public class P0608 {
         int left = 0;
         int right = arr.length - 1;
 
-        while(left <= right) {
+        while (left <= right) {
             int mid = (left + right) / 2;
 
-            if(arr[mid] == target) {
+            if (arr[mid] == target) {
                 return mid + 1;
             }
 
-            if(target < arr[mid]) {
+            if (target < arr[mid]) {
                 right = mid - 1;
             } else {
                 left = mid + 1;

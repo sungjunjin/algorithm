@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 /**
  * 큰 수 출력하기
+ * N개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 수만 출력하는 프로그램을 작성하세요.
+ * <p>
+ * (첫 번째 수는 무조건 출력한다)
  */
 public class P0201 {
     public static void main(String[] args) {

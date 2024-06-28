@@ -7,10 +7,13 @@ import java.util.Scanner;
 
 /**
  * 격자판 최대합
+ * 5*5 격자판에 아래롸 같이 숫자가 적혀있습니다.
+ * <p>
+ * N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선의 합 중 가 장 큰 합을 출력합니다.
  */
-public class P0109 {
+public class P0209 {
     public static void main(String[] args) {
-        P0109 p0109 = new P0109();
+        P0209 p0209 = new P0209();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
 
@@ -20,9 +23,9 @@ public class P0109 {
             arr[i] = in.nextInt();
         }
 
-        int[] answer = p0109.solutionLecture(arr);
+        int[] answer = p0209.solutionLecture(arr);
 
-        for(int a : answer) {
+        for (int a : answer) {
             System.out.print(a + " ");
         }
 
@@ -34,12 +37,12 @@ public class P0109 {
 
         Arrays.sort(arr);
 
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             scoreMap.put(arr[i], arr.length - i);
         }
 
 
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             answer[i] = scoreMap.get(answer[i]);
         }
 
@@ -49,10 +52,10 @@ public class P0109 {
     public int[] solutionLecture(int[] arr) {
         int[] answer = new int[arr.length];
 
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             int count = 1;
-            for(int j = 0; j < arr.length; j++) {
-                if(arr[i] < arr[j]) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
                     count++;
                 }
             }

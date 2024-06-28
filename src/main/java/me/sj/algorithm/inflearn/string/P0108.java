@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 /**
  * 펠린드롬
+ * 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 팰린드롬이라고 합니다.
+ * <p>
+ * 문자열이 입력되면 해당 문자열이 팰린드롬이면 "YES", 아니면 “NO"를 출력하는 프로그램을 작성하세요.
+ * <p>
+ * 단 회문을 검사할 때 알파벳만 가지고 회문을 검사하며, 대소문자를 구분하지 않습니다.
+ * <p>
+ * 알파벳 이외의 문자들의 무시합니다.
  */
 public class P0108 {
     public static void main(String[] args) {
@@ -25,11 +32,11 @@ public class P0108 {
         int left = 0;
         int right = str.length() - 1;
 
-        while(left < right) {
+        while (left < right) {
             boolean isLeftAlpha = Character.isAlphabetic(charArr[left]);
             boolean isRightAlpha = Character.isAlphabetic(charArr[right]);
 
-            if(!isLeftAlpha) {
+            if (!isLeftAlpha) {
                 left++;
                 continue;
             }
@@ -39,8 +46,8 @@ public class P0108 {
                 continue;
             }
 
-            if(isLeftAlpha && isRightAlpha) {
-                if(charArr[left] != charArr[right]) {
+            if (isLeftAlpha && isRightAlpha) {
+                if (charArr[left] != charArr[right]) {
                     return "NO";
                 }
             }
@@ -58,7 +65,7 @@ public class P0108 {
 
         StringBuilder sb = new StringBuilder(str);
 
-        if(str.equals(sb.reverse().toString())) {
+        if (str.equals(sb.reverse().toString())) {
             return "YES";
         }
 

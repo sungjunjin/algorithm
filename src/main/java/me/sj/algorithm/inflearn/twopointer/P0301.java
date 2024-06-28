@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * 두 배열 합치기
+ * 오름차순으로 정렬이 된 두 배열이 주어지면 두 배열을 오름차순으로 합쳐 출력하는 프로그램을 작성하세요.
  */
 public class P0301 {
     public static void main(String[] args) {
@@ -64,14 +65,14 @@ public class P0301 {
 
                 answerIdx++;
 
-            // 오른쪽이 더 큰 경우
+                // 오른쪽이 더 큰 경우
             } else if (arr[leftIdx] < arr2[rightIdx]) {
                 answer[answerIdx] = arr[leftIdx];
                 leftIdx++;
 
                 answerIdx++;
 
-            // 똑같은 경우
+                // 똑같은 경우
             } else {
                 answer[answerIdx] = arr[leftIdx];
                 answer[answerIdx + 1] = arr2[rightIdx];
@@ -92,8 +93,8 @@ public class P0301 {
         int p1 = 0;
         int p2 = 0;
 
-        while(p1 < arr.length && p2 < arr2.length) {
-            if(arr[p1] < arr2[p2]) {
+        while (p1 < arr.length && p2 < arr2.length) {
+            if (arr[p1] < arr2[p2]) {
                 answer.add(arr[p1++]);
             } else {
                 answer.add(arr2[p2++]);
@@ -101,11 +102,11 @@ public class P0301 {
         }
 
         // 나머지 배열을 넣어준다
-        while(p1<arr.length) {
+        while (p1 < arr.length) {
             answer.add(arr[p1++]);
         }
 
-        while(p2<arr2.length) {
+        while (p2 < arr2.length) {
             answer.add(arr2[p2++]);
         }
 

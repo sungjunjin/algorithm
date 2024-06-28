@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * 공통원소 구하기
+ * A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로그램을 작성하세요.
  */
 public class P0302 {
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class P0302 {
 
         ArrayList<Integer> answer = p0302.solutionLecture(arr, arr2);
 
-        for(int i: answer) {
+        for (int i : answer) {
             System.out.print(i + " ");
         }
 
@@ -40,25 +41,25 @@ public class P0302 {
         Arrays.sort(arr);
         Arrays.sort(arr2);
 
-        for(int a : arr) {
-            if(map.containsKey(a)) {
-                map.put(a , map.get(a) + 1);
+        for (int a : arr) {
+            if (map.containsKey(a)) {
+                map.put(a, map.get(a) + 1);
             } else {
-                map.put(a , 1);
+                map.put(a, 1);
             }
 
         }
 
-        for(int a : arr2) {
-            if(map.containsKey(a)) {
-                map.put(a , map.get(a) + 1);
+        for (int a : arr2) {
+            if (map.containsKey(a)) {
+                map.put(a, map.get(a) + 1);
             } else {
-                map.put(a , 1);
+                map.put(a, 1);
             }
         }
 
-        for(Map.Entry<Integer, Integer> set : map.entrySet()) {
-            if(set.getValue() != 1) {
+        for (Map.Entry<Integer, Integer> set : map.entrySet()) {
+            if (set.getValue() != 1) {
                 answer.add(set.getKey());
             }
         }
@@ -69,21 +70,20 @@ public class P0302 {
     public ArrayList<Integer> solutionLecture(int[] arr, int[] arr2) {
         ArrayList<Integer> answer = new ArrayList<>();
 
-        int p1=0;
-        int p2=0;
+        int p1 = 0;
+        int p2 = 0;
 
         Arrays.sort(arr);
         Arrays.sort(arr2);
 
-        while(p1 < arr.length && p2 < arr2.length) {
-            if(arr[p1] < arr2[p2]) {
+        while (p1 < arr.length && p2 < arr2.length) {
+            if (arr[p1] < arr2[p2]) {
                 p1++;
             } else if (arr[p1] == arr2[p2]) {
                 answer.add(arr[p1]);
                 p1++;
                 p2++;
-            }
-            else {
+            } else {
                 p2++;
             }
         }

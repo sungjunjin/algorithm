@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 조합의 경우수 (메모이제이션)
+ * 하지만 여러분은 이 공식을 쓰지않고 다음 공식을 사용하여 재귀를 이용해 조합수를 구해주는 프로그램을 작성하세요.
  */
 public class P0807 {
     static int n = 0;
@@ -25,11 +26,11 @@ public class P0807 {
     }
 
     public int dfs(int n, int r) {
-        if(n==r || r==0) {
-            if(dy[n][r] > 0) return dy[n][r];
+        if (n == r || r == 0) {
+            if (dy[n][r] > 0) return dy[n][r];
             return 1;
         } else {
-            dy[n][r] = dfs(n-1, r-1) +  dfs(n-1, r);
+            dy[n][r] = dfs(n - 1, r - 1) + dfs(n - 1, r);
             return dy[n][r];
         }
     }

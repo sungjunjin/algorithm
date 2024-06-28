@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 /**
  * 섬나라 아일랜드 (DFS)
+ * N*N의 섬나라 아일랜드의 지도가 격자판의 정보로 주어집니다.
+ * <p>
+ * 각 섬은 1로 표시되어 상하좌우와 대각선으로 연결되어 있으며, 0은 바다입니다.
+ * <p>
+ * 섬나라 아일랜드에 몇 개의 섬이 있는지 구하는 프로그램을 작성하세요.
  */
 public class P0813DFS {
 
@@ -48,7 +53,7 @@ public class P0813DFS {
     public void solution() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if(board[i][j] == 1) {
+                if (board[i][j] == 1) {
                     answer++;
                     dfs(new Point(i, j));
                 }

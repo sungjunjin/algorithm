@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 /**
  * 선택 정렬
+ * N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프로그램을 작성하세요.
+ * <p>
+ * 정렬하는 방법은 선택정렬입니다.
  */
 public class P0601 {
     public static void main(String[] args) {
