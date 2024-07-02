@@ -34,7 +34,7 @@ public class P0706 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        n = in.nextInt();
 
         P0706 p0706 = new P0706();
         ch = new int[n + 1];
