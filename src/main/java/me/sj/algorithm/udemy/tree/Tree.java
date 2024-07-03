@@ -1,4 +1,4 @@
-package me.sj.algorithm.tree;
+package me.sj.algorithm.udemy.tree;
 
 import java.util.ArrayList;
 

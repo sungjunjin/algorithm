@@ -13,39 +13,36 @@ import java.util.Scanner;
  * 예를 들어 {1, 3, 5, 6, 7, 10}이 입력되면 {1, 3, 5, 7} = {6, 10} 으로 두 부분집합의 합이 16으로 같은 경우가 존재하는 것을 알 수 있다.
  */
 public class P0801 {
+    static int[] arr;
     static int total = 0;
     static int n = 0;
     static String answer = "NO";
-    static boolean answerAlreadyFound = false;
 
     public static void main(String[] args) {
+        P0801 p0801 = new P0801();
         Scanner in = new Scanner(System.in);
 
         // N개 집합의 원소
         n = in.nextInt();
-        int[] arr = new int[n];
+        arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
             total += arr[i];
         }
 
-        P0801 p0801 = new P0801();
-        p0801.dfs(0, 0, arr);
+        p0801.dfs(0, 0);
         System.out.println(answer);
     }
 
-    public void dfs(int level, int sum, int[] arr) {
-        if (answerAlreadyFound) return;
-
+    public void dfs(int level, int sum) {
         if (level == n) {
-            if (sum == (total - sum)) {
-                answerAlreadyFound = true;
+            if (sum == total - sum) {
                 answer = "YES";
             }
         } else {
-            dfs(level + 1, sum + arr[level], arr);
-            dfs(level + 1, sum, arr);
+            dfs(level + 1, sum + arr[level]);
+            dfs(level + 1, sum);
         }
     }
 }

@@ -1,4 +1,4 @@
-package me.sj.algorithm.dfs;
+package me.sj.algorithm.udemy.dfs;
 
 
 import java.util.ArrayList;

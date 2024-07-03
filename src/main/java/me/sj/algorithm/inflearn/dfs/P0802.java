@@ -13,36 +13,40 @@ import java.util.Scanner;
 public class P0802 {
     static int n;
     static int c;
+    static int answer;
+    static int[] dogs;
+    static boolean[] visited;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         P0802 p0802 = new P0802();
+        Scanner in = new Scanner(System.in);
 
-        // C 킬로그램 넘게 태울수가 없다
+        // 최대 무게
         c = in.nextInt();
 
-        // N 마리의 바둑이들
+        // 바둑이 수
         n = in.nextInt();
-        int[] arr = new int[n];
+        dogs = new int[n];
+        visited = new boolean[n];
 
         for (int i = 0; i < n; i++) {
-            arr[i] = in.nextInt();
+            dogs[i] = in.nextInt();
         }
 
-        int answer = p0802.dfs(0, 0, arr);
+        p0802.dfs(0, 0);
         System.out.println(answer);
     }
 
-    public int dfs(int level, int sum, int[] arr) {
-        if (sum > c) return 0;
-        if (level == n) {
-            if (sum < c) {
-                return sum;
-            }
-        } else {
-            return Math.max(dfs(level + 1, sum + arr[level], arr), dfs(level + 1, sum, arr));
+    public void dfs(int level, int weightSum) {
+        if (weightSum > c) {
+            return;
         }
 
-        return 0;
+        if (level == n) {
+            answer = Math.max(answer, weightSum);
+        } else {
+            dfs(level + 1, weightSum + dogs[level]);
+            dfs(level + 1, weightSum);
+        }
     }
 }

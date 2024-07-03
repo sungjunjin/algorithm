@@ -1,5 +1,6 @@
 package me.sj.algorithm.recursion;
 
+import me.sj.algorithm.udemy.recursion.Sum;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

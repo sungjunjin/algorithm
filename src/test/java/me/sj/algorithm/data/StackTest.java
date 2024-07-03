@@ -1,5 +1,6 @@
 package me.sj.algorithm.data;
 
+import me.sj.algorithm.udemy.data.Stack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

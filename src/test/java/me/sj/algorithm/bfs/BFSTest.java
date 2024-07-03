@@ -1,10 +1,9 @@
 package me.sj.algorithm.bfs;
 
-import me.sj.algorithm.dfs.BFS;
+import me.sj.algorithm.udemy.dfs.BFS;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class BFSTest {
 

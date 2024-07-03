@@ -1,4 +1,4 @@
-package me.sj.algorithm.recursion;
+package me.sj.algorithm.udemy.recursion;
 
 public class Sum {
     public int sum(int n) {

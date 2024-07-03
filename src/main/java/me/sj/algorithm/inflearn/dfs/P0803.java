@@ -1,7 +1,6 @@
 package me.sj.algorithm.inflearn.dfs;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -17,43 +16,45 @@ import java.util.Scanner;
 public class P0803 {
     static int m = 0;
     static int n = 0;
-    static Map<Integer, Integer> map = new HashMap<>();
+    static int[] problems;
+    // key 점수, value 시간
+    static HashMap<Integer, Integer> map = new HashMap<>();
+    static int answer = 0;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         P0803 p0803 = new P0803();
+        Scanner in = new Scanner(System.in);
 
-        // 문제의 개수 N
+        // 문제의 개수
         n = in.nextInt();
+        problems = new int[n];
         // 제한 시간
         m = in.nextInt();
 
-        int[] arr = new int[n];
-
         for (int i = 0; i < n; i++) {
-            // 점수
-            int k = in.nextInt();
+            int score = in.nextInt();
+            int time = in.nextInt();
 
-            // 시간
-            int v = in.nextInt();
-            arr[i] = k;
-            map.put(k, v);
+            problems[i] = score;
+            map.put(score, time);
         }
 
-        int answer = p0803.dfs(0, 0, 0, arr);
+        p0803.dfs(0, 0, 0);
+
         System.out.println(answer);
     }
 
-    public int dfs(int level, int pointSum, int timeSum, int[] arr) {
-        if (level == n) {
-            if (timeSum > m) return 0;
+    public void dfs(int level, int score, int time) {
+        if (time > m) {
+            return;
+        }
 
-            return pointSum;
+        if (level == n) {
+            answer = Math.max(score, answer);
         } else {
-            return Math.max(
-                    dfs(level + 1, pointSum + arr[level], timeSum + map.get(arr[level]), arr),
-                    dfs(level + 1, pointSum, timeSum, arr)
-            );
+            dfs(level + 1, score + problems[level], time + map.get(problems[level]));
+            dfs(level + 1, score, time);
         }
     }
 }
+

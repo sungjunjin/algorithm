@@ -1,5 +1,8 @@
 package me.sj.algorithm.sort;
 
+import me.sj.algorithm.udemy.sort.BubbleSort;
+import me.sj.algorithm.udemy.sort.InsertionSort;
+import me.sj.algorithm.udemy.sort.SelectionSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

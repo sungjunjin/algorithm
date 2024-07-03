@@ -1,4 +1,4 @@
-package me.sj.algorithm.data;
+package me.sj.algorithm.udemy.data;
 
 public class Queue<E> {
     private final Object[] data;

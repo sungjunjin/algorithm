@@ -1,4 +1,4 @@
-package me.sj.algorithm.dp;
+package me.sj.algorithm.udemy.dp;
 
 public class FibonacciMemo {
     public int fibonacci(int num, int[] cache) {

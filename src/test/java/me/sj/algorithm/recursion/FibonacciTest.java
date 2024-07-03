@@ -1,9 +1,9 @@
 package me.sj.algorithm.recursion;
 
+import me.sj.algorithm.udemy.recursion.Fibonacci;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class FibonacciTest {
     Fibonacci fibonacci = new Fibonacci();

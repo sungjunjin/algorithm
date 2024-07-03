@@ -1,5 +1,6 @@
 package me.sj.algorithm.dfs;
 
+import me.sj.algorithm.udemy.dfs.DFS;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

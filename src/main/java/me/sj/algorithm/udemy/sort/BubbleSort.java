@@ -1,4 +1,4 @@
-package me.sj.algorithm.sort;
+package me.sj.algorithm.udemy.sort;
 
 public class BubbleSort {
     public void sort(int [] intArray) {

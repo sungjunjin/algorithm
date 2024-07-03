@@ -1,5 +1,6 @@
 package me.sj.algorithm.tree;
 
+import me.sj.algorithm.udemy.tree.BinarySearchTree;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
