@@ -10,6 +10,7 @@ public class RouteArrayList {
     static int n;
     static int m;
     static int answer = 0;
+    // 인접 리스트
     static ArrayList<ArrayList<Integer>> graph;
     static int[] ch;
 
@@ -23,46 +24,34 @@ public class RouteArrayList {
         graph = new ArrayList<>();
         ch = new int[n + 1];
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
 
         for (int i = 0; i < m; i++) {
-            int a = in.nextInt();
-            int b = in.nextInt();
+            int from = in.nextInt();
+            int to = in.nextInt();
 
-            graph.get(a).add(b);
+            graph.get(from).add(to);
         }
 
         ch[1] = 1;
-        route.solutionLecture(1);
+        route.dfs(1);
 
         System.out.println(answer);
     }
 
-    public void solutionMine(int start) {
-        if(start == n) {
+    public void dfs(int node) {
+        if (node == n) {
             answer++;
         } else {
-            for(int a : graph.get(start)) {
-                if(ch[a] == 0) {
-                    ch[a] = 1;
-                    solutionMine(a);
-                    ch[a] = 0;
-                }
-            }
-        }
-    }
+            ArrayList<Integer> list = graph.get(node);
 
-    public void solutionLecture(int start) {
-        if(start == n) {
-            answer++;
-        } else {
-            for(int next : graph.get(start)) {
-                if(ch[next] == 0) {
-                    ch[next] = 1;
-                    solutionMine(next);
-                    ch[next] = 0;
+            for (int to : list) {
+                if (ch[to] == 0) {
+                    ch[to] = 1;
+                    dfs(to);
+                    ch[to] = 0;
                 }
             }
         }
