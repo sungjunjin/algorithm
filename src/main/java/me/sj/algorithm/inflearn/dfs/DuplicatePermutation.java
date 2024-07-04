@@ -14,25 +14,24 @@ public class DuplicatePermutation {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        DuplicatePermutation p0803 = new DuplicatePermutation();
+        DuplicatePermutation duplicatePermutation = new DuplicatePermutation();
 
-        // 문제의 개수 N
         n = in.nextInt();
-        // 제한 시간
         m = in.nextInt();
         pm = new int[m];
 
-        p0803.dfs(0);
+        duplicatePermutation.dfs(0);
     }
 
     public void dfs(int level) {
         if (level == m) {
-            System.out.print(pm[0] + ", " + pm[1]);
+            for (int i : pm) {
+                System.out.print(i + " ");
+            }
             System.out.println();
         } else {
-            // n가닥으로 뻗어나감
-            for (int i = 1; i <= n; i++) {
-                pm[level] = i;
+            for (int i = 0; i < n; i++) {
+                pm[level] = i + 1;
                 dfs(level + 1);
             }
         }

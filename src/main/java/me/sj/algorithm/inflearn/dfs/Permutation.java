@@ -12,11 +12,12 @@ public class Permutation {
     static int m = 0;
     static int[] pm;
     static int[] arr;
-    static int[] ch;
+    // 중복을 허용하지 않으므로 check 배열이 필요하다
+    static boolean[] ch;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         Permutation p0803 = new Permutation();
+        Scanner in = new Scanner(System.in);
 
         // 자연수 n
         n = in.nextInt();
@@ -28,7 +29,7 @@ public class Permutation {
             arr[i] = in.nextInt();
         }
         // 중복 체크 배열
-        ch = new int[n];
+        ch = new boolean[n];
         pm = new int[m];
 
         p0803.dfs(0);
@@ -36,20 +37,18 @@ public class Permutation {
 
     public void dfs(int level) {
         if (level == m) {
-            String str = "";
-            for (int i = 0; i < pm.length; i++) {
-                str += pm[i] + " ";
+            for(int p : pm) {
+                System.out.print(p + " ");
             }
-
-            System.out.println(str);
+            System.out.println();
 
         } else {
-            for (int i=0;i<arr.length;i++) {
-                if(ch[i] == 0) {
-                    ch[i] = 1;
+            for (int i = 0; i < arr.length; i++) {
+                if(!ch[i]) {
+                    ch[i] = true;
                     pm[level] = arr[i];
                     dfs(level + 1);
-                    ch[i] = 0;
+                    ch[i] = false;
                 }
             }
         }

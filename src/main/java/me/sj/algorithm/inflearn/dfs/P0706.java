@@ -7,13 +7,23 @@ import java.util.Scanner;
  */
 public class P0706 {
     static int n;
-    static int[] ch;
+    static int[] arr;
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+
+        P0706 p0706 = new P0706();
+        arr = new int[n + 1];
+
+        p0706.DFS(1);
+    }
 
     public void DFS(int l) {
         // ch 배열에 경우의 수가 다 세팅되면
         if (l == n + 1) {
-            for (int i = 0; i < ch.length; i++) {
-                if (ch[i] == 1) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == 1) {
                     System.out.print(i + " ");
                 }
             }
@@ -22,23 +32,12 @@ public class P0706 {
 
         } else {
             // 왼쪽 갈래 (사용 함)
-            ch[l] = 1;
+            arr[l] = 1;
             DFS(l + 1);
 
             // 오른쪽 갈래 (사용 안함)
-            ch[l] = 0;
+            arr[l] = 0;
             DFS(l + 1);
         }
-
-    }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        n = in.nextInt();
-
-        P0706 p0706 = new P0706();
-        ch = new int[n + 1];
-
-        p0706.DFS(1);
     }
 }
